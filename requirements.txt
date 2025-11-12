@@ -1,0 +1,8 @@
+streamlit
+pdfplumber
+python-docx
+textblob
+langdetect
+transformers
+torch
+sentencepiece
