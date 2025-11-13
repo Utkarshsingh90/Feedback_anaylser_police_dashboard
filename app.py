@@ -1,363 +1,693 @@
+"""
+Police Recognition Analytics Dashboard with duplicate-file cleaner,
+entity extraction, fuzzy gazetteer matching, sentiment, summary,
+visual analytics, QA, per-item PDF summary and bulk export.
+
+Place your datasets under ./data/
+ - OdishaIPCCrimedata.json
+ - DistrictReport.json
+ - mock_cctnsdata.json
+ - publicfeedback.json
+
+Run:
+    pip install -r requirements.txt
+    python -m spacy download en_core_web_sm
+    streamlit run app.py
+"""
+
 import streamlit as st
+import os
+import json
+from pathlib import Path
+import hashlib
+from typing import List, Dict, Tuple, Optional
 import pdfplumber
-import docx
-from textblob import TextBlob
-import io
 import re
-from langdetect import detect
-from transformers import pipeline, MarianMTModel, MarianTokenizer
+from datetime import datetime
+from io import BytesIO
+import pandas as pd
+import altair as alt
+from rapidfuzz import process as rf_process, fuzz
+import spacy
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
+from reportlab.lib import colors
+from reportlab.lib.units import inch
+from dateutil import parser as dateparser
+import base64
 
-# --- Page Configuration (MUST be the first st command) ---
-st.set_page_config(
-    page_title="Advanced Feedback Analysis",
-    page_icon="🤖",
-    layout="wide"
-)
+st.set_page_config(page_title="Police Recognition Analytics", layout="wide", initial_sidebar_state="expanded")
 
-# --- MOCK DATABASE & KEYWORDS (to simulate entity linking) ---
-MOCK_OFFICERS_DB = {
-    "smith": {"id": 123, "name": "Officer Smith", "unit_id": 14},
-    "doe": {"id": 456, "name": "Detective Doe", "unit_id": 14},
-    "davis": {"id": 789, "name": "Sgt. Davis", "unit_id": 15},
+# ---------------------------
+# Config & constants
+# ---------------------------
+DATA_DIR = Path("data")
+EXPECTED_FILES = [
+    "OdishaIPCCrimedata.json",
+    "DistrictReport.json",
+    "mock_cctnsdata.json",
+    "publicfeedback.json"
+]
+
+# fallback small gazetteer if none provided
+FALLBACK_GAZETTEER = {
+    "names": [
+        "Officer John Smith", "Sergeant Mary Johnson", "Inspector David Brown",
+        "Captain Sarah Williams", "Detective Michael Jones", "Officer Emily Davis",
+        "Lieutenant Robert Miller", "Chief Patricia Wilson", "Officer James Moore",
+        "Constable Jennifer Taylor", "SI Rajesh Kumar", "ASI Priya Sharma",
+        "Inspector Amit Patel", "Constable Sunita Verma", "Officer Rahul Singh"
+    ],
+    "departments": [
+        "Central Police Station", "North District Police", "South Precinct",
+        "Crime Investigation Department", "Traffic Police Department", "City Police Commissionerate",
+        "Bhubaneswar Police", "Cuttack Police", "Puri Police Station"
+    ],
+    "locations": [
+        "Bhubaneswar", "Cuttack", "Puri", "Kendrapara", "Bhubaneshwar", "Downtown", "Riverside", "City Center"
+    ]
 }
 
-MOCK_UNITS_DB = {
-    14: "14th Precinct",
-    15: "Traffic Division (K-9)",
-}
+TITLE_REGEX = r'\b(Officer|Constable|Inspector|Sergeant|Detective|Chief|Captain|Lieutenant|SI|ASI|Sub-Inspector|SP|DSP|ACP|DCP)\b\.?\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)?)'
 
-MOCK_TOPIC_KEYWORDS = {
-    "compassion": "community_engagement",
-    "kind": "community_engagement",
-    "helped the community": "community_engagement",
-    "de-escalated": "de_escalation",
-    "calmed the situation": "de_escalation",
-    "fast response": "rapid_response",
-    "arrived quickly": "rapid_response",
-    "professional": "procedural_correctness",
-    "by the book": "procedural_correctness",
-}
+CRIME_KEYWORDS = [
+    "murder", "rape", "kidnapping", "abduction", "dacoity", "robbery",
+    "burglary", "theft", "riots", "cheating", "counterfeiting", "arson",
+    "hurt", "dowry", "assault", "cruelty", "importation", "negligence"
+]
 
-# --- AI MODEL LOADING (with caching) ---
-# @st.cache_resource is CRITICAL. It prevents reloading the large models
-# every time the user interacts with the app.
+# ---------------------------
+# Utility functions
+# ---------------------------
+def list_data_files() -> List[Path]:
+    DATA_DIR.mkdir(exist_ok=True)
+    return sorted([p for p in DATA_DIR.iterdir() if p.is_file()])
 
-@st.cache_resource
-def load_translator(model_name):
-    """Loads a specific translation model and tokenizer."""
+def load_json_safe(p: Path):
     try:
-        tokenizer = MarianTokenizer.from_pretrained(model_name)
-        model = MarianMTModel.from_pretrained(model_name)
-        return model, tokenizer
-    except Exception as e:
-        st.error(f"Error loading translation model {model_name}: {e}")
-        return None, None
-
-@st.cache_resource
-def load_summarizer():
-    """Loads the summarization pipeline."""
-    try:
-        # Using a smaller, faster model for Streamlit
-        return pipeline("summarization", model="sshleifer/distilbart-cnn-6-6")
-    except Exception as e:
-        st.error(f"Error loading summarization model: {e}")
+        with p.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
         return None
 
-@st.cache_resource
-def load_qa_pipeline():
-    """Loads the question-answering pipeline."""
-    try:
-        # Using a smaller, faster model
-        return pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
-    except Exception as e:
-        st.error(f"Error loading Q&A model: {e}")
-        return None
+def file_hash(p: Path, chunk_size: int = 8192) -> str:
+    h = hashlib.sha256()
+    with p.open("rb") as f:
+        while True:
+            chunk = f.read(chunk_size)
+            if not chunk:
+                break
+            h.update(chunk)
+    return h.hexdigest()
 
-# --- HELPER FUNCTIONS ---
+def scan_duplicates_by_hash(files: List[Path]) -> Dict[str, List[Path]]:
+    mapping = {}
+    for p in files:
+        h = file_hash(p)
+        mapping.setdefault(h, []).append(p)
+    # only keep entries with more than one file (duplicates)
+    return {h: ps for h, ps in mapping.items() if len(ps) > 1}
 
-def get_text_from_file(uploaded_file):
-    """Extracts raw text from PDF, DOCX, or TXT files."""
+def scan_duplicates_by_name_pattern(files: List[Path], patterns: List[str] = None) -> List[Path]:
+    patterns = patterns or ["(1)", "copy", "duplicate", "- Copy"]
+    dup_files = []
+    for p in files:
+        name = p.name.lower()
+        if any(pat.lower() in name for pat in patterns):
+            dup_files.append(p)
+    return dup_files
+
+def delete_files(paths: List[Path]) -> List[str]:
+    deleted = []
+    for p in paths:
+        try:
+            p.unlink()
+            deleted.append(p.name)
+        except Exception as e:
+            st.error(f"Failed to delete {p.name}: {e}")
+    return deleted
+
+# ---------------------------
+# Text extraction & NLP
+# ---------------------------
+nlp = spacy.load("en_core_web_sm")
+sentiment_analyzer = SentimentIntensityAnalyzer()
+
+def extract_text_from_pdf_file(uploaded_file) -> str:
     text = ""
     try:
-        if uploaded_file.type == "text/plain":
-            text = uploaded_file.read().decode("utf-8")
-        elif uploaded_file.type == "application/pdf":
-            with pdfplumber.open(uploaded_file) as pdf:
-                for page in pdf.pages:
-                    text += page.extract_text() or ""
-        elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-            doc = docx.Document(uploaded_file)
-            for para in doc.paragraphs:
-                text += para.text + "\n"
-    except Exception as e:
-        st.error(f"Error reading file '{uploaded_file.name}': {e}")
+        with pdfplumber.open(uploaded_file) as pdf:
+            for page in pdf.pages:
+                ptext = page.extract_text()
+                if ptext:
+                    text += ptext + "\n"
+    except Exception:
+        # fallback: return empty
+        return ""
+    return text.strip()
+
+def extract_entities_spacy(text: str) -> Dict[str, List[str]]:
+    doc = nlp(text)
+    persons, orgs, locs = [], [], []
+    for ent in doc.ents:
+        label = ent.label_
+        if label == "PERSON":
+            persons.append(ent.text.strip())
+        elif label in ("ORG", "NORP"):
+            orgs.append(ent.text.strip())
+        elif label in ("GPE", "LOC", "FAC"):
+            locs.append(ent.text.strip())
+    # dedupe preserving order
+    def dedupe(seq):
+        seen = set(); out = []
+        for s in seq:
+            if s not in seen:
+                seen.add(s); out.append(s)
+        return out
+    return {"persons": dedupe(persons), "orgs": dedupe(orgs), "locs": dedupe(locs)}
+
+def extract_ranked_names(text: str) -> List[str]:
+    matches = []
+    for m in re.finditer(TITLE_REGEX, text):
+        title = m.group(1)
+        name = m.group(2)
+        matches.append(f"{title} {name}")
+    return matches
+
+def fuzzy_match(candidate: str, pool: List[str], cutoff: int = 70) -> Optional[Tuple[str,int]]:
+    if not pool:
         return None
-    return text
+    best = rf_process.extractOne(candidate, pool, scorer=fuzz.WRatio)
+    if best and best[1] >= cutoff:
+        return (best[0], int(best[1]))
+    return None
 
-def translate_to_english(text, lang):
-    """Translates text to English if a model is available."""
-    LANGUAGE_MODEL_MAP = {
-        "hi": "Helsinki-NLP/opus-mt-hi-en",  # Hindi to English
-        "or": "Helsinki-NLP/opus-mt-or-en",  # Odia to English
-        # Add more language codes and models here
-    }
-    
-    if lang not in LANGUAGE_MODEL_MAP:
-        st.warning(f"No translation model available for language '{lang}'. Processing in original language.")
-        return text
+def extract_crime_tags(text: str) -> List[str]:
+    t = text.lower()
+    found = []
+    for k in CRIME_KEYWORDS:
+        if k in t:
+            found.append(k)
+    # sections if any
+    sec_matches = re.findall(r'Section\s*[:\-]?\s*([0-9]{2,4})', text, flags=re.IGNORECASE)
+    for s in sec_matches:
+        found.append(f"Section {s}")
+    return list(dict.fromkeys(found))
 
-    model_name = LANGUAGE_MODEL_MAP[lang]
-    
-    with st.spinner(f"Translating from '{lang}' to English..."):
+def extract_dates(text: str) -> List[str]:
+    patterns = [
+        r'\b(\d{4}-\d{2}-\d{2})\b',
+        r'\b(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})\b',
+        r'\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+\d{4}\b'
+    ]
+    found = set()
+    for pat in patterns:
+        for m in re.findall(pat, text, flags=re.IGNORECASE):
+            try:
+                dt = dateparser.parse(m, fuzzy=True)
+                if dt:
+                    found.add(dt.date().isoformat())
+                else:
+                    found.add(m)
+            except:
+                found.add(m)
+    # fuzzy date phrases
+    phrases = re.findall(r'\b(on|dated|on date)\s+([A-Za-z0-9,\-\/\s]{3,30})', text, flags=re.IGNORECASE)
+    for _, candidate in phrases:
         try:
-            model, tokenizer = load_translator(model_name)
-            if model is None:
-                return text
+            dt = dateparser.parse(candidate, fuzzy=True)
+            if dt:
+                found.add(dt.date().isoformat())
+        except:
+            pass
+    return sorted(found)
 
-            # Prepare text for translation
-            input_ids = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).input_ids
-            
-            # Generate translation
-            translated_ids = model.generate(input_ids)
-            
-            # Decode and return
-            translated_text = tokenizer.batch_decode(translated_ids, skip_special_tokens=True)[0]
-            return translated_text
-        except Exception as e:
-            st.error(f"Translation failed: {e}")
-            return text
+def summarize_text_simple(text: str, max_sentences: int = 3) -> str:
+    # simple extractive: first few sentences of reasonable length
+    doc = nlp(text)
+    sents = [s.text.strip() for s in doc.sents if len(s.text.strip()) > 20]
+    if not sents:
+        return text[:500]
+    return " ".join(sents[:max_sentences])
 
-def process_text_pipeline(raw_text):
-    """
-    The main AI pipeline that orchestrates all tasks.
-    """
-    # --- 1. Language Detection & Translation ---
-    processed_text = raw_text
-    original_lang = "en"
-    try:
-        original_lang = detect(raw_text)
-        if original_lang != "en":
-            processed_text = translate_to_english(raw_text, original_lang)
-    except Exception as e:
-        st.warning(f"Language detection failed. Assuming English. Error: {e}")
-        pass
+def sentiment_score(text: str) -> Tuple[str, float]:
+    v = sentiment_analyzer.polarity_scores(text[:1000])
+    compound = v["compound"]
+    label = "NEUTRAL"
+    if compound >= 0.05:
+        label = "POSITIVE"
+    elif compound <= -0.05:
+        label = "NEGATIVE"
+    return label, compound
 
-    # --- 2. Dashboard Extraction ---
-    # (Runs on the *translated* text)
-    
-    # NER (Entity Linking)
-    found_officer = None
-    officer_name = None
-    for keyword, officer_data in MOCK_OFFICERS_DB.items():
-        if re.search(r'\b' + re.escape(keyword) + r'\b', processed_text, re.IGNORECASE):
-            found_officer = officer_data
-            officer_name = officer_data['name']
-            break
+# ---------------------------
+# Gazetteer & hybrid extraction
+# ---------------------------
+def build_gazetteer_from_data(datasets: Dict[str, Optional[object]]) -> Dict[str, List[str]]:
+    gaz = {"names": [], "departments": [], "locations": []}
+    # mock_cctnsdata -> extract officer_name and rank
+    mc = datasets.get("mock_cctnsdata")
+    if isinstance(mc, list):
+        for r in mc:
+            n = r.get("officer_name")
+            if n:
+                gaz["names"].append(n)
+            idf = r.get("id") or r.get("fir_no")
+            if idf and str(idf) not in gaz["names"]:
+                # not a name, skip
+                pass
+    # district reports may have police_station and investigating_officer_id
+    dr = datasets.get("district_reports")
+    if isinstance(dr, list):
+        for r in dr:
+            ps = r.get("police_station") or r.get("station") or r.get("police_station_name")
+            if ps:
+                gaz["departments"].append(ps)
+            io = r.get("investigating_officer_id")
+            if io:
+                gaz["names"].append(io)
+    # public feedback may contain names in free text; we won't parse here
+    # odisha ipc data may include district names or other keys
+    od = datasets.get("odisha_ipc")
+    if isinstance(od, dict):
+        for k in od.keys():
+            # some districts as keys
+            gaz["locations"].append(k)
+    # always fallback to built-in small gazetteer
+    for k in ("names", "departments", "locations"):
+        gaz[k] = list(dict.fromkeys(gaz.get(k, []) + FALLBACK_GAZETTEER.get(k, [])))
+    return gaz
 
-    suggested_officer_id = found_officer["id"] if found_officer else None
-    suggested_unit_id = found_officer["unit_id"] if found_officer else None
-    suggested_unit_name = MOCK_UNITS_DB.get(suggested_unit_id, "Unknown Unit") if suggested_unit_id else "N/A"
-
-    # Topic Tagging
-    suggested_tags = set()
-    for keyword, tag in MOCK_TOPIC_KEYWORDS.items():
-        if re.search(r'\b' + re.escape(keyword) + r'\b', processed_text, re.IGNORECASE):
-            suggested_tags.add(tag)
-
-    # Sentiment Analysis
-    blob = TextBlob(processed_text)
-    sentiment_score = blob.sentiment.polarity
-
-    # Find Relevant Snippet
-    extracted_text = "No relevant snippet found."
-    if officer_name:
-        sentences = re.split(r'[.!?]', processed_text)
-        for sentence in sentences:
-            if re.search(r'\b' + re.escape(officer_name.split()[-1]) + r'\b', sentence, re.IGNORECASE):
-                extracted_text = sentence.strip() + "..."
+def hybrid_extract(text: str, gazetteer: Dict[str, List[str]]) -> Dict:
+    entities = extract_entities_spacy(text)
+    ranked = extract_ranked_names(text)
+    candidates = []
+    # prefer ranked names then NER persons
+    candidates.extend(ranked)
+    candidates.extend(entities.get("persons", []))
+    found_officers = []
+    found_officers_conf = []
+    for cand in candidates:
+        # try exact match
+        matched = None
+        for opt in gazetteer["names"]:
+            if cand.lower() == opt.lower():
+                matched = (opt, 100)
                 break
-    elif len(processed_text) > 150:
-         extracted_text = processed_text[:150].strip() + "..."
-    elif processed_text:
-        extracted_text = processed_text.strip()
-    
-    # --- 3. Summarization ---
-    summary = "Summarization model failed or text too short."
-    if len(processed_text.split()) > 30: # Only summarize if text is long enough
-        try:
-            summarizer = load_summarizer()
-            if summarizer:
-                summary_result = summarizer(processed_text, max_length=150, min_length=25, do_sample=False)
-                summary = summary_result[0]['summary_text']
-        except Exception as e:
-            st.error(f"Summarization failed: {e}")
-            summary = "Summarization error."
-
-    # --- Assemble Final Output ---
-    output = {
-        "original_text": raw_text,
-        "processed_text": processed_text, # The English version
-        "original_lang": original_lang,
-        "summary": summary,
-        "dashboard_details": {
-            "extracted_text": extracted_text,
-            "suggested_officer_id": suggested_officer_id,
-            "suggested_unit_id": suggested_unit_id,
-            "suggested_unit_name": suggested_unit_name,
-            "suggested_sentiment": round(sentiment_score, 2),
-            "suggested_tags": list(suggested_tags) or ["no_tags_found"]
-        }
+        if not matched:
+            fr = fuzzy_match(cand, gazetteer["names"], cutoff=70)
+            if fr:
+                matched = fr
+        if matched:
+            found_officers.append(matched[0])
+            found_officers_conf.append({"name": matched[0], "score": matched[1], "source": "gazetteer/ner"})
+        else:
+            # keep raw candidate with lower confidence
+            found_officers.append(cand)
+            found_officers_conf.append({"name": cand, "score": 55, "source": "ner/raw"})
+    # de-dup
+    found_officers = list(dict.fromkeys(found_officers)) or ["(Officer name not found - please specify)"]
+    # departments
+    found_depts = []
+    for org in entities.get("orgs", []):
+        f = fuzzy_match(org, gazetteer["departments"], cutoff=60)
+        if f:
+            found_depts.append(f[0])
+        else:
+            found_depts.append(org)
+    # fallback: find department keywords in text
+    if not found_depts:
+        for dept in gazetteer["departments"]:
+            if dept.lower() in text.lower():
+                found_depts.append(dept)
+    found_depts = list(dict.fromkeys(found_depts)) or ["(Department not specified)"]
+    # locations
+    found_locs = []
+    for loc in entities.get("locs", []):
+        f = fuzzy_match(loc, gazetteer["locations"], cutoff=65)
+        if f:
+            found_locs.append(f[0])
+        else:
+            found_locs.append(loc)
+    if not found_locs:
+        for loc in gazetteer["locations"]:
+            if loc.lower() in text.lower():
+                found_locs.append(loc)
+    found_locs = list(dict.fromkeys(found_locs))
+    return {
+        "officers": found_officers,
+        "officers_conf": found_officers_conf,
+        "departments": found_depts,
+        "locations": found_locs
     }
-    
-    return output
 
-# --- STREAMLIT APP UI ---
+# ---------------------------
+# PDF report creation
+# ---------------------------
+def create_pdf_from_result(result: Dict) -> BytesIO:
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=letter)
+    styles = getSampleStyleSheet()
+    story = []
+    title_style = ParagraphStyle('Title', parent=styles['Heading1'], fontSize=18, textColor=colors.HexColor("#1f4b99"), alignment=1)
+    heading_style = ParagraphStyle('H', parent=styles['Heading2'], fontSize=12, textColor=colors.HexColor("#2e6bb7"))
+    story.append(Paragraph("Police Recognition Report", title_style))
+    story.append(Spacer(1, 0.15*inch))
+    story.append(Paragraph(f"<b>Generated:</b> {datetime.now().strftime('%B %d, %Y at %I:%M %p')}", styles['Normal']))
+    story.append(Spacer(1, 0.12*inch))
+    story.append(Paragraph("Summary", heading_style))
+    story.append(Paragraph(result.get("summary", "(no summary)"), styles['Normal']))
+    story.append(Spacer(1, 0.12*inch))
+    metrics = [
+        ["Metric", "Value"],
+        ["Recognition Score", f"{result.get('recognition_score', 0)}/1.0"],
+        ["Sentiment", result.get("sentiment_label", "NEUTRAL")],
+        ["Text length", str(result.get("text_length", 0))],
+        ["Crime tags", ", ".join(result.get("crime_tags", []) or ["None"])],
+        ["Dates", ", ".join(result.get("dates", []) or ["None"])]
+    ]
+    t = Table(metrics, colWidths=[3*inch, 3*inch])
+    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor("#2e6bb7")),
+                           ('TEXTCOLOR',(0,0),(-1,0),colors.whitesmoke),
+                           ('GRID',(0,0),(-1,-1),1,colors.black),
+                           ('BACKGROUND',(0,1),(-1,-1),colors.beige)]))
+    story.append(t)
+    story.append(Spacer(1, 0.12*inch))
+    story.append(Paragraph("Identified Officers", heading_style))
+    for o in result.get("officers", []):
+        story.append(Paragraph(f"• {o}", styles['Normal']))
+    story.append(Spacer(1, 0.12*inch))
+    story.append(Paragraph("Departments", heading_style))
+    for d in result.get("departments", []):
+        story.append(Paragraph(f"• {d}", styles['Normal']))
+    story.append(Spacer(1, 0.12*inch))
+    story.append(Paragraph("Locations", heading_style))
+    for l in result.get("locations", []):
+        story.append(Paragraph(f"• {l}", styles['Normal']))
+    doc.build(story)
+    buffer.seek(0)
+    return buffer
 
-st.title("🤖 Advanced Feedback Analysis Pipeline")
-st.markdown("This tool translates, analyzes, summarizes, and answers questions from community feedback.")
+# ---------------------------
+# Processing pipeline
+# ---------------------------
+def analyze_text(text: str, datasets: Dict[str, Optional[object]]) -> Dict:
+    text = text.strip()
+    gaz = build_gazetteer_from_data(datasets)
+    hybrid = hybrid_extract(text, gaz)
+    # sentiment
+    sent_label, sent_score = sentiment_score(text)
+    # summary
+    summary = summarize_text_simple(text)
+    # crime tags and dates
+    crimes = extract_crime_tags(text)
+    dates = extract_dates(text)
+    # recognition score heuristic
+    base = (sent_score + 1) / 2  # normalize -1..1 to 0..1
+    tag_boost = 0.0
+    if any(w in text.lower() for w in ["saved", "rescue", "life-saving", "revived"]):
+        tag_boost += 0.12
+    if any(w in text.lower() for w in ["brave", "courage", "heroic", "fearless"]):
+        tag_boost += 0.12
+    length_boost = min(0.1, len(text)/1000 * 0.1)
+    recognition_score = round(min(1.0, base + tag_boost + length_boost), 3)
+    result = {
+        "timestamp": datetime.now().isoformat(),
+        "text": text,
+        "summary": summary,
+        "officers": hybrid.get("officers", []),
+        "officers_conf": hybrid.get("officers_conf", []),
+        "departments": hybrid.get("departments", []),
+        "locations": hybrid.get("locations", []),
+        "sentiment_label": sent_label,
+        "sentiment_score": sent_score,
+        "crime_tags": crimes,
+        "dates": dates,
+        "recognition_score": recognition_score,
+        "text_length": len(text)
+    }
+    return result
 
-# --- Use session state to store results ---
-# This is key for the Q&A to work without re-analyzing
-if 'analysis_result' not in st.session_state:
-    st.session_state.analysis_result = None
+# ---------------------------
+# Session state
+# ---------------------------
+if "processed_data" not in st.session_state:
+    st.session_state.processed_data = []
 
-# --- Sidebar: Mock Data & Instructions ---
+if "datasets" not in st.session_state:
+    # load datasets into memory once
+    files = {p.name: load_json_safe(p) for p in list_data_files()}
+    # normalize keys
+    st.session_state.datasets = {
+        "odisha_ipc": files.get("OdishaIPCCrimedata.json"),
+        "district_reports": files.get("DistrictReport.json") or files.get("DistrictReport.JSON"),
+        "mock_cctnsdata": files.get("mock_cctnsdata.json"),
+        "publicfeedback": files.get("publicfeedback.json")
+    }
+
+# ---------------------------
+# UI layout
+# ---------------------------
+st.title("🚔 Police Recognition Analytics")
+st.markdown("Use the panels to clean data files, upload documents, analyze feedback, visualize results, and export reports.")
+
+# Sidebar: file status + duplicate cleaner
 with st.sidebar:
-    st.title("ℹ️ App Guide")
-    st.markdown("**1. Input:** Upload a file or paste text (Hindi, Odia, or English).")
-    st.markdown("**2. Analyze:** Click the 'Analyze' button.")
-    st.markdown("**3. Review:** Check the 'Dashboard', 'Summary', and 'Q&A' tabs.")
-    st.markdown("---")
-    st.subheader("Mock Database (For Demo)")
-    st.caption("The app links names to this data:")
-    with st.expander("Officers DB", expanded=False):
-        st.json(MOCK_OFFICERS_DB)
-    with st.expander("Units DB", expanded=False):
-        st.json(MOCK_UNITS_DB)
-    with st.expander("Topic Keywords", expanded=False):
-        st.json(MOCK_TOPIC_KEYWORDS)
-
-# --- Main App Body ---
-
-# Input Section
-input_tab1, input_tab2 = st.tabs(["📁 Upload a File", "📋 Paste Text"])
-raw_text_input = None
-uploaded_file = None
-pasted_text = None
-
-with input_tab1:
-    uploaded_file = st.file_uploader(
-        "Upload a PDF, DOCX, or TXT file",
-        type=["pdf", "docx", "txt"],
-        accept_multiple_files=False
-    )
-    if uploaded_file:
-        raw_text_input = get_text_from_file(uploaded_file)
-
-with input_tab2:
-    pasted_text = st.text_area("Paste your text here (e.g., from a news article or email):", height=250)
-    if pasted_text:
-        raw_text_input = pasted_text
-
-# Analyze Button
-if st.button("Analyze Text", type="primary", use_container_width=True):
-    if raw_text_input:
-        with st.spinner("🧠 Starting full AI pipeline... This may take a moment."):
-            st.session_state.analysis_result = process_text_pipeline(raw_text_input)
+    st.header("Data files")
+    data_files = list_data_files()
+    file_table = []
+    for p in data_files:
+        status = "✅" if p.name in EXPECTED_FILES else "•"
+        file_table.append((p.name, p.stat().st_size, status))
+    if file_table:
+        df_files = pd.DataFrame(file_table, columns=["Filename", "Size (bytes)", "Note"])
+        st.table(df_files)
     else:
-        st.warning("Please upload a file or paste text first.")
+        st.info("No files in data/ folder yet.")
 
-# --- Output Section ---
-if st.session_state.analysis_result:
     st.markdown("---")
-    st.success("Analysis Complete!")
-    
-    result = st.session_state.analysis_result
-    
-    # Output Tabs
-    out_tab1, out_tab2, out_tab3, out_tab4 = st.tabs([
-        "📊 Dashboard Details", 
-        "📝 Summary", 
-        "❓ Ask a Question (Q&A)", 
-        "📜 Original vs. Translated"
-    ])
-    
-    # --- Tab 1: Dashboard Details ---
-    with out_tab1:
-        st.subheader("Data for Recognition Dashboard")
-        
-        details = result['dashboard_details']
-        
-        # Sentiment Metric
-        sentiment = details['suggested_sentiment']
-        if sentiment > 0.3:
-            sentiment_label = "Positive"
-            delta = f"{sentiment} (Good)"
-        elif sentiment < -0.3:
-            sentiment_label = "Negative"
-            delta = f"{sentiment} (Bad)"
+    st.subheader("Duplicate file cleaner")
+    if st.button("Scan duplicates"):
+        files = list_data_files()
+        dup_hash = scan_duplicates_by_hash(files)
+        dup_name = scan_duplicates_by_name_pattern(files)
+        st.session_state.dup_by_hash = dup_hash
+        st.session_state.dup_by_name = dup_name
+        if not dup_hash and not dup_name:
+            st.success("No obvious duplicates found.")
         else:
-            sentiment_label = "Neutral"
-            delta = f"{sentiment}"
-        
-        st.metric(label="Sentiment", value=sentiment_label, delta=delta)
-        
-        # Extracted Details
-        col1, col2 = st.columns(2)
-        with col1:
-            st.text(f"Officer ID: {details['suggested_officer_id']}")
-            st.text(f"Unit ID:    {details['suggested_unit_id']}")
-            st.text(f"Unit Name:  {details['suggested_unit_name']}")
-        
-        with col2:
-            st.text("Suggested Tags:")
-            st.code(", ".join(details['suggested_tags']), language=None)
-            
-        st.subheader("Relevant Snippet")
-        st.info(f"`{details['extracted_text']}`")
-        
-        st.subheader("Forward to Dashboard (Mock)")
-        if st.button("Approve & Send to Dashboard"):
-            st.success("Approved! (This is a demo - no data was sent)")
+            st.warning("Duplicates detected — review below and delete selected items carefully.")
 
-    # --- Tab 2: Summary ---
-    with out_tab2:
-        st.subheader("AI-Generated Summary")
-        st.info(result['summary'])
+    if "dup_by_hash" in st.session_state and st.session_state.dup_by_hash:
+        st.markdown("### Duplicates (by identical content)")
+        for h, paths in st.session_state.dup_by_hash.items():
+            st.markdown(f"- **Group hash:** `{h[:10]}...` (same content)")
+            for p in paths:
+                st.checkbox(f"{p}", key=f"chk_hash_{p.name}")
+        if st.button("Delete selected identical files"):
+            to_delete = []
+            for h, paths in st.session_state.dup_by_hash.items():
+                for p in paths:
+                    if st.session_state.get(f"chk_hash_{p.name}", False):
+                        to_delete.append(p)
+            if to_delete:
+                deleted = delete_files(to_delete)
+                st.success(f"Deleted: {deleted}")
+                # refresh dataset cache
+                st.session_state.datasets = {k: load_json_safe(DATA_DIR / k) for k in EXPECTED_FILES}
+            else:
+                st.info("No files selected for deletion.")
+    if "dup_by_name" in st.session_state and st.session_state.dup_by_name:
+        st.markdown("### Duplicates (by name pattern)")
+        for p in st.session_state.dup_by_name:
+            st.checkbox(f"{p}", key=f"chk_name_{p.name}")
+        if st.button("Delete selected name-pattern files"):
+            to_delete = [p for p in st.session_state.dup_by_name if st.session_state.get(f"chk_name_{p.name}", False)]
+            if to_delete:
+                deleted = delete_files(to_delete)
+                st.success(f"Deleted: {deleted}")
+                st.session_state.datasets = {k: load_json_safe(DATA_DIR / k) for k in EXPECTED_FILES}
+            else:
+                st.info("No files selected for deletion.")
 
-    # --- Tab 3: Ask a Question ---
-    with out_tab3:
-        st.subheader("Ask a Question About the Text")
-        
-        # We use the 'processed_text' (English) as the context
-        context = result['processed_text']
-        
-        question = st.text_input("Ask something like 'Who was the officer?' or 'What was the outcome?'")
-        
-        if question:
-            with st.spinner("Finding answer..."):
+# Main tabs
+tab1, tab2, tab3, tab4 = st.tabs(["Process Feedback", "Dashboard", "Q&A", "Export & Files"])
+
+# ---------------------------
+# Tab1 - Process Feedback
+# ---------------------------
+with tab1:
+    st.header("Process feedback or reports")
+    col1, col2 = st.columns([3,1])
+    with col1:
+        input_choice = st.radio("Input method", ("Paste text", "Upload file (txt/pdf)"))
+        raw_text = ""
+        if input_choice == "Paste text":
+            raw_text = st.text_area("Paste the text to analyze", height=280, placeholder="Type or paste report / feedback here...")
+        else:
+            uploaded = st.file_uploader("Upload TXT or PDF", type=["txt","pdf"])
+            if uploaded:
+                if uploaded.type == "application/pdf":
+                    try:
+                        raw_text = extract_text_from_pdf_file(uploaded)
+                        st.success(f"Extracted {len(raw_text)} characters from PDF")
+                    except Exception as e:
+                        st.error(f"PDF read error: {e}")
+                else:
+                    try:
+                        raw_text = uploaded.read().decode("utf-8", errors="ignore")
+                        st.success(f"Loaded {len(raw_text)} characters from TXT")
+                    except Exception as e:
+                        st.error(f"Text read error: {e}")
+        if st.button("Analyze"):
+            if not raw_text or not raw_text.strip():
+                st.warning("Please provide text or upload a file.")
+            else:
+                result = analyze_text(raw_text, st.session_state.datasets)
+                st.session_state.processed_data.append(result)
+                st.success("Analysis complete — item added to processed data.")
+                st.experimental_rerun()
+    with col2:
+        st.markdown("### Tips")
+        st.markdown("- Include rank/title (e.g., `SI Rajesh Kumar`) when available for better extraction.")
+        st.markdown("- For best PDF results, upload text-based PDFs; scanned PDFs need OCR before uploading.")
+        st.markdown("- Use the duplicate cleaner in the sidebar to remove accidental uploads.")
+
+# ---------------------------
+# Tab2 - Dashboard (visual analytics)
+# ---------------------------
+with tab2:
+    st.header("Visual analytics")
+    data = st.session_state.processed_data
+    if not data:
+        st.info("No processed items yet. Analyze some feedback to build visuals.")
+    else:
+        df = pd.DataFrame(data)
+        # crime type distribution
+        all_crimes = [c for row in df['crime_tags'] for c in (row or [])]
+        crime_series = pd.Series(all_crimes).value_counts().reset_index()
+        crime_series.columns = ["crime", "count"]
+        if not crime_series.empty:
+            st.subheader("Crime type distribution")
+            chart = alt.Chart(crime_series).mark_bar().encode(
+                x=alt.X("crime:N", sort='-y', title="Crime Type"),
+                y=alt.Y("count:Q", title="Count"),
+                tooltip=["crime","count"]
+            ).properties(width=700, height=350)
+            st.altair_chart(chart, use_container_width=True)
+        else:
+            st.info("No crime tags found in processed items.")
+
+        # district-wise counts from datasets if available
+        st.subheader("District / Station counts (from DistrictReport dataset if present)")
+        dr = st.session_state.datasets.get("DistrictReport.json") or st.session_state.datasets.get("DistrictReport.JSON") or st.session_state.datasets.get("DistrictReport.json".lower())
+        if isinstance(dr, list) and dr:
+            # attempt to extract district/station and counts fields
+            rows = []
+            for r in dr:
+                district = r.get("district") or r.get("District") or r.get("district_name") or r.get("station")
+                cases = r.get("cases") or r.get("cases_count") or r.get("casesReported") or r.get("cases", 0)
                 try:
-                    qa_pipeline = load_qa_pipeline()
-                    if qa_pipeline:
-                        qa_result = qa_pipeline(question=question, context=context)
-                        st.success(f"**Answer:** {qa_result['answer']}")
-                        st.caption(f"(Confidence: {qa_result['score']:.2f})")
-                    else:
-                        st.error("Q&A model is not available.")
-                except Exception as e:
-                    st.error(f"Q&A failed: {e}")
-
-    # --- Tab 4: Original vs. Translated ---
-    with out_tab4:
-        st.subheader("Text Processing")
-        st.markdown(f"**Detected Language:** `{result['original_lang']}`")
-        
-        if result['original_lang'] != 'en':
-            st.subheader("Original Text")
-            st.text_area("", result['original_text'], height=200)
-            
-            st.subheader("Translated Text (Used for Analysis)")
-            st.text_area("", result['processed_text'], height=200)
+                    cases = int(cases)
+                except:
+                    cases = 0
+                rows.append({"district": district or "Unknown", "cases": cases})
+            df_dr = pd.DataFrame(rows).groupby("district", as_index=False).sum()
+            bar = alt.Chart(df_dr).mark_bar().encode(
+                x=alt.X("district:N", sort='-y', title="District/Station"),
+                y=alt.Y("cases:Q", title="Cases"),
+                tooltip=["district","cases"]
+            ).properties(width=700, height=350)
+            st.altair_chart(bar, use_container_width=True)
         else:
-            st.info("Original text is in English. No translation needed.")
-            st.text_area("Original Text", result['original_text'], height=200)
+            st.info("District report dataset not present or empty.")
+
+        # sentiment distribution
+        st.subheader("Sentiment distribution")
+        sent_counts = df['sentiment_label'].value_counts().reset_index()
+        sent_counts.columns = ["sentiment", "count"]
+        if not sent_counts.empty:
+            pie = alt.Chart(sent_counts).mark_arc().encode(
+                theta=alt.Theta(field="count", type="quantitative"),
+                color=alt.Color(field="sentiment", type="nominal"),
+                tooltip=["sentiment","count"]
+            ).properties(width=400, height=300)
+            st.altair_chart(pie, use_container_width=False)
+        # top officers
+        st.subheader("Top mentioned officers")
+        all_offs = [o for row in df['officers'] for o in (row or []) if not str(o).startswith("(")]
+        if all_offs:
+            off_series = pd.Series(all_offs).value_counts().reset_index()
+            off_series.columns = ["officer", "count"]
+            bar2 = alt.Chart(off_series.head(15)).mark_bar().encode(
+                x=alt.X("officer:N", sort='-y', title="Officer"),
+                y=alt.Y("count:Q", title="Mentions"),
+                tooltip=["officer", "count"]
+            ).properties(width=700, height=350)
+            st.altair_chart(bar2, use_container_width=True)
+        else:
+            st.info("No officer mentions found yet.")
+
+# ---------------------------
+# Tab3 - Q&A (keyword search over processed items)
+# ---------------------------
+with tab3:
+    st.header("Q&A / Search over processed feedback")
+    if not st.session_state.processed_data:
+        st.info("No processed items yet.")
+    else:
+        q = st.text_input("Enter a question or keywords (e.g., 'bravery', 'stadium fire', 'SI Rajesh'):")
+        top_k = st.slider("Max results", 1, 10, 5)
+        if st.button("Search"):
+            results = []
+            for item in st.session_state.processed_data:
+                text = item.get("text","")
+                score = fuzz.partial_ratio(q.lower(), text.lower())
+                if score > 30:
+                    results.append((score, item))
+            results = sorted(results, key=lambda x: x[0], reverse=True)[:top_k]
+            if results:
+                for sc, it in results:
+                    st.markdown(f"**Score:** {sc}  |  **Recognition Score:** {it.get('recognition_score')}")
+                    st.write(it.get("summary"))
+                    st.write("**Officers:**", ", ".join(it.get("officers", [])))
+                    if st.button(f"Download PDF for result {sc}", key=f"pdf_{sc}_{len(it.get('summary',''))}"):
+                        pdfb = create_pdf_from_result({
+                            "summary": it.get("summary"),
+                            "recognition_score": it.get("recognition_score"),
+                            "sentiment_label": it.get("sentiment_label"),
+                            "text_length": it.get("text_length"),
+                            "crime_tags": it.get("crime_tags"),
+                            "dates": it.get("dates"),
+                            "officers": it.get("officers"),
+                            "departments": it.get("departments"),
+                            "locations": it.get("locations")
+                        })
+                        st.download_button("Download report PDF", data=pdfb, file_name=f"report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf", mime="application/pdf")
+            else:
+                st.info("No matches found. Try different keywords.")
+
+# ---------------------------
+# Tab4 - Export & Files
+# ---------------------------
+with tab4:
+    st.header("Export & Files")
+    st.subheader("Processed items")
+    if not st.session_state.processed_data:
+        st.info("No processed items to export.")
+    else:
+        df_proc = pd.DataFrame(st.session_state.processed_data)
+        st.dataframe(df_proc, height=400)
+        csv_data = df_proc.to_csv(index=False)
+        json_data = df_proc.to_json(orient="records", indent=2, force_ascii=False)
+        st.download_button("Download CSV", csv_data, file_name=f"processed_{datetime.now().strftime('%Y%m%d')}.csv", mime="text/csv")
+        st.download_button("Download JSON", json_data, file_name=f"processed_{datetime.now().strftime('%Y%m%d')}.json", mime="application/json")
+    st.markdown("---")
+    st.subheader("Data folder quick actions")
+    if st.button("Refresh datasets"):
+        # reload dataset cache
+        st.session_state.datasets = {k: load_json_safe(DATA_DIR / k) for k in EXPECTED_FILES}
+        st.success("Datasets refreshed.")
+    st.info("Files listed in the sidebar show current contents of the data/ folder. Use the duplicate cleaner above to remove accidental uploads.")

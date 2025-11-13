@@ -1,0 +1,572 @@
+{
+  "Angul": {
+    "total_strength": 650,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 25,
+      "sub_inspector": 120,
+      "constable": 503
+    },
+    "by_gender": {
+      "male": 585,
+      "female": 65
+    },
+    "by_age_group": {
+      "20_30": 180,
+      "31_40": 260,
+      "41_50": 160,
+      "51_plus": 50
+    }
+  },
+  "Balangir": {
+    "total_strength": 710,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 30,
+      "sub_inspector": 130,
+      "constable": 547
+    },
+    "by_gender": {
+      "male": 630,
+      "female": 80
+    },
+    "by_age_group": {
+      "20_30": 200,
+      "31_40": 280,
+      "41_50": 170,
+      "51_plus": 60
+    }
+  },
+  "Balasore": {
+    "total_strength": 900,
+    "by_role": {
+      "ips_ops": 4,
+      "inspector": 40,
+      "sub_inspector": 180,
+      "constable": 676
+    },
+    "by_gender": {
+      "male": 810,
+      "female": 90
+    },
+    "by_age_group": {
+      "20_30": 250,
+      "31_40": 350,
+      "41_50": 220,
+      "51_plus": 80
+    }
+  },
+  "Bargarh": {
+    "total_strength": 720,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 31,
+      "sub_inspector": 135,
+      "constable": 551
+    },
+    "by_gender": {
+      "male": 650,
+      "female": 70
+    },
+    "by_age_group": {
+      "20_30": 210,
+      "31_40": 290,
+      "41_50": 160,
+      "51_plus": 60
+    }
+  },
+  "Bhadrak": {
+    "total_strength": 680,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 28,
+      "sub_inspector": 125,
+      "constable": 525
+    },
+    "by_gender": {
+      "male": 610,
+      "female": 70
+    },
+    "by_age_group": {
+      "20_30": 190,
+      "31_40": 270,
+      "41_50": 170,
+      "51_plus": 50
+    }
+  },
+  "Boudh": {
+    "total_strength": 350,
+    "by_role": {
+      "ips_ops": 1,
+      "inspector": 15,
+      "sub_inspector": 60,
+      "constable": 274
+    },
+    "by_gender": {
+      "male": 315,
+      "female": 35
+    },
+    "by_age_group": {
+      "20_30": 100,
+      "31_40": 140,
+      "41_50": 80,
+      "51_plus": 30
+    }
+  },
+  "Cuttack": {
+    "total_strength": 1100,
+    "by_role": {
+      "ips_ops": 5,
+      "inspector": 50,
+      "sub_inspector": 220,
+      "constable": 825
+    },
+    "by_gender": {
+      "male": 980,
+      "female": 120
+    },
+    "by_age_group": {
+      "20_30": 300,
+      "31_40": 430,
+      "41_50": 270,
+      "51_plus": 100
+    }
+  },
+  "Deogarh": {
+    "total_strength": 300,
+    "by_role": {
+      "ips_ops": 1,
+      "inspector": 12,
+      "sub_inspector": 50,
+      "constable": 237
+    },
+    "by_gender": {
+      "male": 270,
+      "female": 30
+    },
+    "by_age_group": {
+      "20_30": 90,
+      "31_40": 120,
+      "41_50": 70,
+      "51_plus": 20
+    }
+  },
+  "Dhenkanal": {
+    "total_strength": 670,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 28,
+      "sub_inspector": 120,
+      "constable": 520
+    },
+    "by_gender": {
+      "male": 600,
+      "female": 70
+    },
+    "by_age_group": {
+      "20_30": 180,
+      "31_40": 260,
+      "41_50": 170,
+      "51_plus": 60
+    }
+  },
+  "Gajapati": {
+    "total_strength": 410,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 18,
+      "sub_inspector": 70,
+      "constable": 320
+    },
+    "by_gender": {
+      "male": 365,
+      "female": 45
+    },
+    "by_age_group": {
+      "20_30": 120,
+      "31_40": 160,
+      "41_50": 100,
+      "51_plus": 30
+    }
+  },
+  "Ganjam": {
+    "total_strength": 1300,
+    "by_role": {
+      "ips_ops": 6,
+      "inspector": 60,
+      "sub_inspector": 250,
+      "constable": 984
+    },
+    "by_gender": {
+      "male": 1150,
+      "female": 150
+    },
+    "by_age_group": {
+      "20_30": 350,
+      "31_40": 500,
+      "41_50": 320,
+      "51_plus": 130
+    }
+  },
+  "Jagatsinghpur": {
+    "total_strength": 700,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 30,
+      "sub_inspector": 130,
+      "constable": 537
+    },
+    "by_gender": {
+      "male": 630,
+      "female": 70
+    },
+    "by_age_group": {
+      "20_30": 200,
+      "31_40": 280,
+      "41_50": 170,
+      "51_plus": 50
+    }
+  },
+  "Jajpur": {
+    "total_strength": 880,
+    "by_role": {
+      "ips_ops": 4,
+      "inspector": 38,
+      "sub_inspector": 170,
+      "constable": 668
+    },
+    "by_gender": {
+      "male": 790,
+      "female": 90
+    },
+    "by_age_group": {
+      "20_30": 240,
+      "31_40": 340,
+      "41_50": 220,
+      "51_plus": 80
+    }
+  },
+  "Jharsuguda": {
+    "total_strength": 600,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 25,
+      "sub_inspector": 110,
+      "constable": 463
+    },
+    "by_gender": {
+      "male": 540,
+      "female": 60
+    },
+    "by_age_group": {
+      "20_30": 170,
+      "31_40": 240,
+      "41_50": 140,
+      "51_plus": 50
+    }
+  },
+  "Kalahandi": {
+    "total_strength": 730,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 32,
+      "sub_inspector": 140,
+      "constable": 555
+    },
+    "by_gender": {
+      "male": 660,
+      "female": 70
+    },
+    "by_age_group": {
+      "20_30": 210,
+      "31_40": 290,
+      "41_50": 170,
+      "51_plus": 60
+    }
+  },
+  "Kandhamal": {
+    "total_strength": 450,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 20,
+      "sub_inspector": 80,
+      "constable": 348
+    },
+    "by_gender": {
+      "male": 405,
+      "female": 45
+    },
+    "by_age_group": {
+      "20_30": 130,
+      "31_40": 180,
+      "41_50": 110,
+      "51_plus": 30
+    }
+  },
+  "Kendrapara": {
+    "total_strength": 760,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 34,
+      "sub_inspector": 145,
+      "constable": 578
+    },
+    "by_gender": {
+      "male": 680,
+      "female": 80
+    },
+    "by_age_group": {
+      "20_30": 220,
+      "31_40": 300,
+      "41_50": 180,
+      "51_plus": 60
+    }
+  },
+  "Keonjhar": {
+    "total_strength": 920,
+    "by_role": {
+      "ips_ops": 4,
+      "inspector": 40,
+      "sub_inspector": 180,
+      "constable": 696
+    },
+    "by_gender": {
+      "male": 830,
+      "female": 90
+    },
+    "by_age_group": {
+      "20_30": 260,
+      "31_40": 360,
+      "41_50": 220,
+      "51_plus": 80
+    }
+  },
+  "Khordha": {
+    "total_strength": 1500,
+    "by_role": {
+      "ips_ops": 7,
+      "inspector": 70,
+      "sub_inspector": 300,
+      "constable": 1123
+    },
+    "by_gender": {
+      "male": 1300,
+      "female": 200
+    },
+    "by_age_group": {
+      "20_30": 400,
+      "31_40": 550,
+      "41_50": 400,
+      "51_plus": 150
+    }
+  },
+  "Koraput": {
+    "total_strength": 800,
+    "by_role": {
+      "ips_ops": 4,
+      "inspector": 35,
+      "sub_inspector": 150,
+      "constable": 611
+    },
+    "by_gender": {
+      "male": 720,
+      "female": 80
+    },
+    "by_age_group": {
+      "20_30": 230,
+      "31_40": 320,
+      "41_50": 190,
+      "51_plus": 60
+    }
+  },
+  "Malkangiri": {
+    "total_strength": 550,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 22,
+      "sub_inspector": 100,
+      "constable": 425
+    },
+    "by_gender": {
+      "male": 500,
+      "female": 50
+    },
+    "by_age_group": {
+      "20_30": 160,
+      "31_40": 220,
+      "41_50": 130,
+      "51_plus": 40
+    }
+  },
+  "Mayurbhanj": {
+    "total_strength": 1050,
+    "by_role": {
+      "ips_ops": 5,
+      "inspector": 45,
+      "sub_inspector": 200,
+      "constable": 800
+    },
+    "by_gender": {
+      "male": 940,
+      "female": 110
+    },
+    "by_age_group": {
+      "20_30": 300,
+      "31_40": 410,
+      "41_50": 250,
+      "51_plus": 90
+    }
+  },
+  "Nabarangpur": {
+    "total_strength": 610,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 26,
+      "sub_inspector": 110,
+      "constable": 472
+    },
+    "by_gender": {
+      "male": 550,
+      "female": 60
+    },
+    "by_age_group": {
+      "20_30": 180,
+      "31_40": 240,
+      "41_50": 140,
+      "51_plus": 50
+    }
+  },
+  "Nayagarh": {
+    "total_strength": 580,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 24,
+      "sub_inspector": 100,
+      "constable": 454
+    },
+    "by_gender": {
+      "male": 520,
+      "female": 60
+    },
+    "by_age_group": {
+      "20_30": 170,
+      "31_40": 230,
+      "41_50": 130,
+      "51_plus": 50
+    }
+  },
+  "Nuapada": {
+    "total_strength": 420,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 18,
+      "sub_inspector": 75,
+      "constable": 325
+    },
+    "by_gender": {
+      "male": 380,
+      "female": 40
+    },
+    "by_age_group": {
+      "20_30": 120,
+      "31_40": 170,
+      "41_50": 100,
+      "51_plus": 30
+    }
+  },
+  "Puri": {
+    "total_strength": 850,
+    "by_role": {
+      "ips_ops": 4,
+      "inspector": 36,
+      "sub_inspector": 160,
+      "constable": 650
+    },
+    "by_gender": {
+      "male": 760,
+      "female": 90
+    },
+    "by_age_group": {
+      "20_30": 240,
+      "31_40": 330,
+      "41_50": 200,
+      "51_plus": 80
+    }
+  },
+  "Rayagada": {
+    "total_strength": 630,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 27,
+      "sub_inspector": 115,
+      "constable": 485
+    },
+    "by_gender": {
+      "male": 570,
+      "female": 60
+    },
+    "by_age_group": {
+      "20_30": 180,
+      "31_40": 250,
+      "41_50": 150,
+      "51_plus": 50
+    }
+  },
+  "Sambalpur": {
+    "total_strength": 790,
+    "by_role": {
+      "ips_ops": 3,
+      "inspector": 35,
+      "sub_inspector": 150,
+      "constable": 602
+    },
+    "by_gender": {
+      "male": 710,
+      "female": 80
+    },
+    "by_age_group": {
+      "20_30": 220,
+      "31_40": 310,
+      "41_50": 190,
+      "51_plus": 70
+    }
+  },
+  "Subarnapur": {
+    "total_strength": 400,
+    "by_role": {
+      "ips_ops": 2,
+      "inspector": 17,
+      "sub_inspector": 70,
+      "constable": 311
+    },
+    "by_gender": {
+      "male": 360,
+      "female": 40
+    },
+    "by_age_group": {
+      "20_30": 110,
+      "31_40": 160,
+      "41_50": 100,
+      "51_plus": 30
+    }
+  },
+  "Sundargarh": {
+    "total_strength": 1150,
+    "by_role": {
+      "ips_ops": 5,
+      "inspector": 55,
+      "sub_inspector": 230,
+      "constable": 860
+    },
+    "by_gender": {
+      "male": 1030,
+      "female": 120
+    },
+    "by_age_group": {
+      "20_30": 320,
+      "31_40": 450,
+      "41_50": 280,
+      "51_plus": 100
+    }
+  }
+}

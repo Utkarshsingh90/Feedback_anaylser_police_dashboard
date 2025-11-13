@@ -1,0 +1,2001 @@
+[
+  {
+    "case_id": "KHD1001",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-01",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Initial FIR lodged. Victim statement recorded. CCTV footage from nearby ATM sent for enhancement. Awaiting forensic report on fingerprints."
+  },
+  {
+    "case_id": "CUT1002",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-02",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Suspect identified and arrested based on eyewitness testimony. Charge sheet filed. Final report submitted."
+  },
+  {
+    "case_id": "KPT1003",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-09-15",
+    "crime_type": "Cybercrime (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Pending. IP address traced to a different state. Request sent to ISP for user details. Awaiting ISP response."
+  },
+  {
+    "case_id": "GNJ1004",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-03",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Victim injured, statement pending full recovery. Sketch of suspect being prepared. Witness unavailable, has left town temporarily."
+  },
+  {
+    "case_id": "SNG1005",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-01",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Stolen goods recovered from local pawn shop. Suspects apprehended based on shop's CCTV. Charge sheet filed."
+  },
+  {
+    "case_id": "PURI1006",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-04",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Tourist's wallet stolen on beach. No witnesses or CCTV footage. Suspect not identified. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1007",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-05",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Online job scam. Bank account details of suspect frozen. Awaiting bank compliance report. Victim statement recorded."
+  },
+  {
+    "case_id": "SBP1008",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-03",
+    "crime_type": "Riots (Section 147 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Clash between two student groups. Video footage collected. Identification of all involved parties is in progress."
+  },
+  {
+    "case_id": "CUT1009",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-09-28",
+    "crime_type": "Kidnapping (Section 363 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Victim rescued from nearby district. Accused arrested. All parties known to each other. Final report submitted."
+  },
+  {
+    "case_id": "GNJ1010",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-05",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Chain snatching incident. CCTV footage from the area is grainy. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "KHD1011",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-06",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. House broken into at night. Awaiting forensic report on fingerprints. Modus operandi matches local gang."
+  },
+  {
+    "case_id": "SNG1012",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-04",
+    "crime_type": "Industrial Theft",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Theft of copper wire from plant. Insider involvement suspected. Employee logbooks being audited. Key witness unavailable."
+  },
+  {
+    "case_id": "PURI1013",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-06",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Dispute between two shopkeepers. Both parties reached a compromise. Case closed after mutual agreement."
+  },
+  {
+    "case_id": "KPT1014",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-01",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Motorcycle theft. Vehicle not recovered. No leads or witnesses. Final report submitted as undetected."
+  },
+  {
+    "case_id": "CUT1015",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-07",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake lottery ticket scam. Phone number of accused is out of service. Awaiting bank compliance report on linked account."
+  },
+  {
+    "case_id": "KHD1016",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-08",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Phishing email complaint from IT company. Malicious IP address identified. Awaiting ISP response for user details."
+  },
+  {
+    "case_id": "GNJ1017",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-06",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Tourist robbed on beach. Accused caught by patrol car nearby. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "SBP1018",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-05",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Attempted burglary. Suspect fled the scene. Awaiting forensic report on footprints. Witness statement recorded."
+  },
+  {
+    "case_id": "SNG1019",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-07",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Minor scuffle. Parties warned and case closed on mutual understanding."
+  },
+  {
+    "case_id": "KHD1020",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-09",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Laptop stolen from car. No CCTV coverage in the parking lot. Witness unavailable (out of station)."
+  },
+  {
+    "case_id": "KHD1021",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-10",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Mobile snatching. Bike number partially noted. Checking CCTV footage from all exit routes. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "CUT1022",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-11",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Shoplifting case. Suspect identified from in-store CCTV and apprehended. Goods recovered."
+  },
+  {
+    "case_id": "GNJ1023",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-10",
+    "crime_type": "Dowry Death (Section 304B IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Victim's family statement recorded. Accused (husband) arrested. Awaiting post-mortem report. Awaiting forensic report."
+  },
+  {
+    "case_id": "PURI1024",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-11",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Fake accommodation booking scam. Website and bank details collected. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "KPT1025",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-10-09",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Land dispute. Both parties brought to station, dispute mediated and resolved amicably. Case closed."
+  },
+  {
+    "case_id": "SNG1026",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-12",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Vehicle theft. Checking CCTV footage from entry/exit points of the city. All-points bulletin issued."
+  },
+  {
+    "case_id": "KHD1027",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-13",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. No fingerprints found. No witnesses. No CCTV. Case closed as undetected."
+  },
+  {
+    "case_id": "SBP1028",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-10",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Social media account hacking. Awaiting ISP response from social media platform."
+  },
+  {
+    "case_id": "CUT1029",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-12",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Accused caught by public and handed over to police. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1030",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-13",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Theft from temple. CCTV footage is unclear. Awaiting forensic report on broken lock."
+  },
+  {
+    "case_id": "KHD1031",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-14",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Laptop stolen from office. Key witness unavailable (on leave). Internal security footage being reviewed."
+  },
+  {
+    "case_id": "PURI1032",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-15",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Fight between tourists. One party has left the city. Efforts being made to contact them. Witness statement recorded."
+  },
+  {
+    "case_id": "SNG1033",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-13",
+    "crime_type": "Accident (Section 304A IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Industrial accident. Awaiting technical report from factory inspector. Awaiting post-mortem report."
+  },
+  {
+    "case_id": "KPT1034",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-11",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Suspect identified and arrested. Stolen items partially recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "CUT1035",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-15",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Pickpocketing at bus stand. No CCTV. Victim could not identify suspect. Case is under observation."
+  },
+  {
+    "case_id": "KHD1036",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-16",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Financial fraud (UPI). Money trail being traced. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "GNJ1037",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-14",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Road rage incident. Both parties apologized and settled. Case closed."
+  },
+  {
+    "case_id": "SBP1038",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-12",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Closed. Bicycle theft. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1039",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-17",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Theft from vehicle. CCTV footage sent for enhancement. Patrolling increased in the area."
+  },
+  {
+    "case_id": "CUT1040",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-16",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Shop burglary. Awaiting forensic report on fingerprints. Similar MO to other recent burglaries."
+  },
+  {
+    "case_id": "BLS1041",
+    "district": "Balasore",
+    "police_station": "Town",
+    "fir_date": "2025-10-01",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Highway robbery. Victim's statement recorded. Modus operandi suggests professional gang. Awaiting forensic report on vehicle."
+  },
+  {
+    "case_id": "MYJ1042",
+    "district": "Mayurbhanj",
+    "police_station": "Baripada",
+    "fir_date": "2025-10-03",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Livestock theft. Animals recovered from nearby village. Accused arrested. Charge sheet filed."
+  },
+  {
+    "case_id": "KJR1043",
+    "district": "Keonjhar",
+    "police_station": "Town",
+    "fir_date": "2025-10-05",
+    "crime_type": "Illegal Mining",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Illegal mining complaint. Joint task force with revenue department. Awaiting technical report on seized materials."
+  },
+  {
+    "case_id": "BHD1044",
+    "district": "Bhadrak",
+    "police_station": "Town",
+    "fir_date": "2025-10-07",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. Minor dispute. Parties compromised. Case closed."
+  },
+  {
+    "case_id": "JJP1045",
+    "district": "Jajpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-08",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Theft at industrial park. CCTV footage sent for enhancement. Security guard's statement recorded. Witness unavailable."
+  },
+  {
+    "case_id": "BLS1046",
+    "district": "Balasore",
+    "police_station": "Marine",
+    "fir_date": "2025-10-10",
+    "crime_type": "Smuggling",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Closed. Contraband seized from fishing vessel. Accused arrested in joint operation with Coast Guard. Charge sheet filed."
+  },
+  {
+    "case_id": "MYJ1047",
+    "district": "Mayurbhanj",
+    "police_station": "Udala",
+    "fir_date": "2025-10-12",
+    "crime_type": "Poaching",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Pending. Elephant tusk found. Awaiting forensic report. Informant network activated. Joint investigation with Forest Dept."
+  },
+  {
+    "case_id": "KJR1048",
+    "district": "Keonjhar",
+    "police_station": "Joda",
+    "fir_date": "2025-10-14",
+    "crime_type": "Extortion (Section 384 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Complaint from transport company. Call records being analyzed. Awaiting bank compliance report on provided account."
+  },
+  {
+    "case_id": "BHD1049",
+    "district": "Bhadrak",
+    "police_station": "Rural",
+    "fir_date": "2025-10-15",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. No leads, no witnesses. Case closed as undetected."
+  },
+  {
+    "case_id": "JJP1050",
+    "district": "Jajpur",
+    "police_station": "Kalinga Nagar",
+    "fir_date": "2025-10-16",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Theft of construction materials. Site manager's statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "KHD1051",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-18",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. Fight between neighbors. Compromise reached. Case closed."
+  },
+  {
+    "case_id": "CUT1052",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-19",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake profile and harassment. Awaiting ISP response from social media platform."
+  },
+  {
+    "case_id": "GNJ1053",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Suspect caught red-handed by patrol. Stolen item recovered."
+  },
+  {
+    "case_id": "SNG1054",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-18",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report on fingerprints. Witness statement recorded."
+  },
+  {
+    "case_id": "PURI1055",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-21",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Bag stolen from beach. No witnesses. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1056",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-22",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Closed. Accused returned the money after FIR. Victim withdrew complaint. Case closed."
+  },
+  {
+    "case_id": "SBP1057",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-19",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Victim statement recorded. Accused is absconding. Search is ongoing."
+  },
+  {
+    "case_id": "CUT1058",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Theft from a moving vehicle. Witness statement recorded. No clear leads."
+  },
+  {
+    "case_id": "GNJ1059",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-21",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Chain snatching. CCTV footage sent for enhancement. Suspects on bike, number plate not visible."
+  },
+  {
+    "case_id": "KHD1060",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-23",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Theft of idols from a small temple. Awaiting forensic report. Informant network activated."
+  },
+  {
+    "case_id": "SNG1061",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-20",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Online payment fraud. Money trail being traced. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "PURI1062",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-22",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Minor dispute between pilgrims. Mediated and resolved."
+  },
+  {
+    "case_id": "KPT1063",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-10-18",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Pending. Agricultural equipment stolen. No witnesses. Patrolling increased."
+  },
+  {
+    "case_id": "CUT1064",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-23",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake job promise. Victim statement recorded. Call records of accused being analyzed."
+  },
+  {
+    "case_id": "KHD1065",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-24",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Closed. Suspect (ex-employee) identified from CCTV and arrested. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1066",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-21",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "SBP1067",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-20",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Closed. Compromise reached between parties."
+  },
+  {"case_id": "SNG1068",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-22",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Scrap metal theft. Security guard's statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "KHD1069",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-25",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Mobile snatching. CCTV footage sent for enhancement. Victim was unable to identify suspect."
+  },
+  {
+    "case_id": "CUT1070",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-24",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Theft from apartment. No signs of forced entry. Domestic help is primary suspect. Witness unavailable."
+  },
+  {
+    "case_id": "BLS1071",
+    "district": "Balasore",
+    "police_station": "Town",
+    "fir_date": "2025-10-18",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Land dispute, forged documents. Awaiting forensic report on signatures. Legal opinion sought."
+  },
+  {
+    "case_id": "MYJ1072",
+    "district": "Mayurbhanj",
+    "police_station": "Baripada",
+    "fir_date": "2025-10-19",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Dispute resolved amicably."
+  },
+  {
+    "case_id": "KJR1073",
+    "district": "Keonjhar",
+    "police_station": "Town",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Motorcycle theft. Checking CCTV footage."
+  },
+  {
+    "case_id": "BHD1074",
+    "district": "Bhadrak",
+    "police_station": "Town",
+    "fir_date": "2025-10-21",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. Suspect caught by locals. Stolen items recovered."
+  },
+  {
+    "case_id": "JJP1075",
+    "district": "Jajpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-22",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Cash snatched from bank customer. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "BLS1076",
+    "district": "Balasore",
+    "police_station": "Marine",
+    "fir_date": "2025-10-23",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Theft of fishing nets. Witness statement recorded."
+  },
+  {
+    "case_id": "MYJ1077",
+    "district": "Mayurbhanj",
+    "police_station": "Udala",
+    "fir_date": "2025-10-24",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "KJR1078",
+    "district": "Keonjhar",
+    "police_station": "Joda",
+    "fir_date": "2025-10-25",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Theft of iron ore. Truck details collected. Checking transport permits."
+  },
+  {
+    "case_id": "BHD1079",
+    "district": "Bhadrak",
+    "police_station": "Rural",
+    "fir_date": "2025-10-26",
+    "crime_type": "Accident (Section 304A IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Pending. Hit and run. Awaiting post-mortem report. No witnesses."
+  },
+  {
+    "case_id": "JJP1080",
+    "district": "Jajpur",
+    "police_station": "Kalinga Nagar",
+    "fir_date": "2025-10-27",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report on fingerprints."
+  },
+  {
+    "case_id": "KHD1081",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-28",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. SIM card swap fraud. Awaiting ISP response for call records."
+  },
+  {
+    "case_id": "CUT1082",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-29",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Mobile theft. Suspect tracked using IMEI and arrested."
+  },
+  {
+    "case_id": "GNJ1083",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-28",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Modus operandi matches previous cases. Awaiting forensic report."
+  },
+  {
+    "case_id": "SNG1084",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-27",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "PURI1085",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-29",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Land sale with forged documents. Awaiting forensic report on signatures."
+  },
+  {
+    "case_id": "KHD1086",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-30",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "SBP1087",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-28",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Witness statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "CUT1088",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-30",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Accused identified from CCTV and arrested. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1089",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-29",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "KHD1090",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-31",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Theft in company campus. CCTV footage sent for enhancement. Internal security being questioned."
+  },
+  {
+    "case_id": "SNG1091",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-30",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "PURI1092",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-31",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Mobile stolen from tourist. IMEI number tracked. Location pending from service provider. Awaiting ISP response."
+  },
+  {
+    "case_id": "KPT1093",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-27",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Accused returned money. Case closed on compromise."
+  },
+  {
+    "case_id": "CUT1094",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-11-01",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Victim statement recorded. Accused absconding."
+  },
+  {
+    "case_id": "KHD1095",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-11-02",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report. No CCTV."
+  },
+  {
+    "case_id": "GNJ1096",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-11-01",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Suspects arrested during night patrol. Stolen items recovered."
+  },
+  {
+    "case_id": "SBP1097",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-30",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Theft from temple donation box. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "SNG1098",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-29",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Compromise."
+  },
+  {
+    "case_id": "KHD1099",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-11-03",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Bag lift from market. CCTV footage being reviewed."
+  },
+  {
+    "case_id": "CUT1100",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-11-02",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1101",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-01",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Initial FIR lodged. Victim statement recorded. CCTV footage from nearby ATM sent for enhancement. Awaiting forensic report on fingerprints."
+  },
+  {
+    "case_id": "CUT1102",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-02",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Suspect identified and arrested based on eyewitness testimony. Charge sheet filed. Final report submitted."
+  },
+  {
+    "case_id": "KPT1103",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-09-15",
+    "crime_type": "Cybercrime (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Pending. IP address traced to a different state. Request sent to ISP for user details. Awaiting ISP response."
+  },
+  {
+    "case_id": "GNJ1104",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-03",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Victim injured, statement pending full recovery. Sketch of suspect being prepared. Witness unavailable, has left town temporarily."
+  },
+  {
+    "case_id": "SNG1105",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-01",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Stolen goods recovered from local pawn shop. Suspects apprehended based on shop's CCTV. Charge sheet filed."
+  },
+  {
+    "case_id": "PURI1106",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-04",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Tourist's wallet stolen on beach. No witnesses or CCTV footage. Suspect not identified. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1107",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-05",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Online job scam. Bank account details of suspect frozen. Awaiting bank compliance report. Victim statement recorded."
+  },
+  {
+    "case_id": "SBP1108",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-03",
+    "crime_type": "Riots (Section 147 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Clash between two student groups. Video footage collected. Identification of all involved parties is in progress."
+  },
+  {
+    "case_id": "CUT1109",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-09-28",
+    "crime_type": "Kidnapping (Section 363 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Victim rescued from nearby district. Accused arrested. All parties known to each other. Final report submitted."
+  },
+  {
+    "case_id": "GNJ1110",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-05",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Chain snatching incident. CCTV footage from the area is grainy. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "KHD1111",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-06",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. House broken into at night. Awaiting forensic report on fingerprints. Modus operandi matches local gang."
+  },
+  {
+    "case_id": "SNG1112",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-04",
+    "crime_type": "Industrial Theft",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Theft of copper wire from plant. Insider involvement suspected. Employee logbooks being audited. Key witness unavailable."
+  },
+  {
+    "case_id": "PURI1113",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-06",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Dispute between two shopkeepers. Both parties reached a compromise. Case closed after mutual agreement."
+  },
+  {
+    "case_id": "KPT1114",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-01",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Motorcycle theft. Vehicle not recovered. No leads or witnesses. Final report submitted as undetected."
+  },
+  {
+    "case_id": "CUT1115",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-07",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake lottery ticket scam. Phone number of accused is out of service. Awaiting bank compliance report on linked account."
+  },
+  {
+    "case_id": "KHD1116",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-08",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Phishing email complaint from IT company. Malicious IP address identified. Awaiting ISP response for user details."
+  },
+  {
+    "case_id": "GNJ1117",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-06",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Tourist robbed on beach. Accused caught by patrol car nearby. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "SBP1118",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-05",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Attempted burglary. Suspect fled the scene. Awaiting forensic report on footprints. Witness statement recorded."
+  },
+  {
+    "case_id": "SNG1119",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-07",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Minor scuffle. Parties warned and case closed on mutual understanding."
+  },
+  {
+    "case_id": "KHD1120",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-09",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Laptop stolen from car. No CCTV coverage in the parking lot. Witness unavailable (out of station)."
+  },
+  {
+    "case_id": "KHD1121",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-10",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Mobile snatching. Bike number partially noted. Checking CCTV footage from all exit routes. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "CUT1122",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-11",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Shoplifting case. Suspect identified from in-store CCTV and apprehended. Goods recovered."
+  },
+  {
+    "case_id": "GNJ1123",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-10",
+    "crime_type": "Dowry Death (Section 304B IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Victim's family statement recorded. Accused (husband) arrested. Awaiting post-mortem report. Awaiting forensic report."
+  },
+  {
+    "case_id": "PURI1124",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-11",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Fake accommodation booking scam. Website and bank details collected. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "KPT1125",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-10-09",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Land dispute. Both parties brought to station, dispute mediated and resolved amicably. Case closed."
+  },
+  {
+    "case_id": "SNG1126",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-12",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Vehicle theft. Checking CCTV footage from entry/exit points of the city. All-points bulletin issued."
+  },
+  {
+    "case_id": "KHD1127",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-13",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. No fingerprints found. No witnesses. No CCTV. Case closed as undetected."
+  },
+  {
+    "case_id": "SBP1128",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-10",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Social media account hacking. Awaiting ISP response from social media platform."
+  },
+  {
+    "case_id": "CUT1129",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-12",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Accused caught by public and handed over to police. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1130",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-13",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Theft from temple. CCTV footage is unclear. Awaiting forensic report on broken lock."
+  },
+  {
+    "case_id": "KHD1131",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-14",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Theft in company campus. Key witness unavailable (on leave). Internal security footage being reviewed."
+  },
+  {
+    "case_id": "PURI1132",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-15",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Fight between tourists. One party has left the city. Efforts being made to contact them. Witness statement recorded."
+  },
+  {
+    "case_id": "SNG1133",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-13",
+    "crime_type": "Accident (Section 304A IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Industrial accident. Awaiting technical report from factory inspector. Awaiting post-mortem report."
+  },
+  {
+    "case_id": "KPT1134",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-11",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Suspect identified and arrested. Stolen items partially recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "CUT1135",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-15",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Pickpocketing at bus stand. No CCTV. Victim could not identify suspect. Case is under observation."
+  },
+  {
+    "case_id": "KHD1136",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-16",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Financial fraud (UPI). Money trail being traced. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "GNJ1137",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-14",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Road rage incident. Both parties apologized and settled. Case closed."
+  },
+  {
+    "case_id": "SBP1138",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-12",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Closed. Bicycle theft. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1139",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-17",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Theft from vehicle. CCTV footage sent for enhancement. Patrolling increased in the area."
+  },
+  {
+    "case_id": "CUT1140",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-16",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Shop burglary. Awaiting forensic report on fingerprints. Similar MO to other recent burglaries."
+  },
+  {
+    "case_id": "BLS1141",
+    "district": "Balasore",
+    "police_station": "Town",
+    "fir_date": "2025-10-01",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Highway robbery. Victim's statement recorded. Modus operandi suggests professional gang. Awaiting forensic report on vehicle."
+  },
+  {
+    "case_id": "MYJ1142",
+    "district": "Mayurbhanj",
+    "police_station": "Baripada",
+    "fir_date": "2025-10-03",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Livestock theft. Animals recovered from nearby village. Accused arrested. Charge sheet filed."
+  },
+  {
+    "case_id": "KJR1143",
+    "district": "Keonjhar",
+    "police_station": "Town",
+    "fir_date": "2025-10-05",
+    "crime_type": "Illegal Mining",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Illegal mining complaint. Joint task force with revenue department. Awaiting technical report on seized materials."
+  },
+  {
+    "case_id": "BHD1144",
+    "district": "Bhadrak",
+    "police_station": "Town",
+    "fir_date": "2025-10-07",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. Minor dispute. Parties compromised. Case closed."
+  },
+  {
+    "case_id": "JJP1145",
+    "district": "Jajpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-08",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Theft at industrial park. CCTV footage sent for enhancement. Security guard's statement recorded. Witness unavailable."
+  },
+  {
+    "case_id": "BLS1146",
+    "district": "Balasore",
+    "police_station": "Marine",
+    "fir_date": "2025-10-10",
+    "crime_type": "Smuggling",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Closed. Contraband seized from fishing vessel. Accused arrested in joint operation with Coast Guard. Charge sheet filed."
+  },
+  {
+    "case_id": "MYJ1147",
+    "district": "Mayurbhanj",
+    "police_station": "Udala",
+    "fir_date": "2025-10-12",
+    "crime_type": "Poaching",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Pending. Elephant tusk found. Awaiting forensic report. Informant network activated. Joint investigation with Forest Dept."
+  },
+  {
+    "case_id": "KJR1148",
+    "district": "Keonjhar",
+    "police_station": "Joda",
+    "fir_date": "2025-10-14",
+    "crime_type": "Extortion (Section 384 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Complaint from transport company. Call records being analyzed. Awaiting bank compliance report on provided account."
+  },
+  {
+    "case_id": "BHD1149",
+    "district": "Bhadrak",
+    "police_station": "Rural",
+    "fir_date": "2025-10-15",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. No leads, no witnesses. Case closed as undetected."
+  },
+  {
+    "case_id": "JJP1150",
+    "district": "Jajpur",
+    "police_station": "Kalinga Nagar",
+    "fir_date": "2025-10-16",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Theft of construction materials. Site manager's statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "KHD1151",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-18",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. Fight between neighbors. Compromise reached. Case closed."
+  },
+  {
+    "case_id": "CUT1152",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-19",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake profile and harassment. Awaiting ISP response from social media platform."
+  },
+  {
+    "case_id": "GNJ1153",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Suspect caught red-handed by patrol. Stolen item recovered."
+  },
+  {
+    "case_id": "SNG1154",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-18",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report on fingerprints. Witness statement recorded."
+  },
+  {
+    "case_id": "PURI1155",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-21",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Bag stolen from beach. No witnesses. Case closed as undetected."
+  },
+  {
+    "case_id": "KHD1156",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-22",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Closed. Accused returned the money after FIR. Victim withdrew complaint. Case closed."
+  },
+  {
+    "case_id": "SBP1157",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-19",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Victim statement recorded. Accused is absconding. Search is ongoing."
+  },
+  {
+    "case_id": "CUT1158",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Theft from a moving vehicle. Witness statement recorded. No clear leads."
+  },
+  {
+    "case_id": "GNJ1159",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-21",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Chain snatching. CCTV footage sent for enhancement. Suspects on bike, number plate not visible."
+  },
+  {
+    "case_id": "KHD1160",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-23",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Theft of idols from a small temple. Awaiting forensic report. Informant network activated."
+  },
+  {
+    "case_id": "SNG1161",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-20",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Online payment fraud. Money trail being traced. Awaiting bank compliance report."
+  },
+  {
+    "case_id": "PURI1162",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-22",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Closed. Minor dispute between pilgrims. Mediated and resolved."
+  },
+  {
+    "case_id": "KPT1163",
+    "district": "Koraput",
+    "police_station": "Jeypore",
+    "fir_date": "2025-10-18",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Pending. Agricultural equipment stolen. No witnesses. Patrolling increased."
+  },
+  {
+    "case_id": "CUT1164",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-23",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Fake job promise. Victim statement recorded. Call records of accused being analyzed."
+  },
+  {
+    "case_id": "KHD1165",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-24",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Closed. Suspect (ex-employee) identified from CCTV and arrested. Stolen items recovered. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1166",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-21",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "SBP1167",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-20",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Closed. Compromise reached between parties."
+  },
+  {
+    "case_id": "SNG1168",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-22",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Pending. Scrap metal theft. Security guard's statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "KHD1169",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-10-25",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Mobile snatching. CCTV footage sent for enhancement. Victim was unable to identify suspect."
+  },
+  {
+    "case_id": "CUT1170",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-10-24",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Theft from apartment. No signs of forced entry. Domestic help is primary suspect. Witness unavailable."
+  },
+  {
+    "case_id": "BLS1171",
+    "district": "Balasore",
+    "police_station": "Town",
+    "fir_date": "2025-10-18",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Land dispute, forged documents. Awaiting forensic report on signatures. Legal opinion sought."
+  },
+  {
+    "case_id": "MYJ1172",
+    "district": "Mayurbhanj",
+    "police_station": "Baripada",
+    "fir_date": "2025-10-19",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Dispute resolved amicably."
+  },
+  {
+    "case_id": "KJR1173",
+    "district": "Keonjhar",
+    "police_station": "Town",
+    "fir_date": "2025-10-20",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Motorcycle theft. Checking CCTV footage."
+  },
+  {
+    "case_id": "BHD1174",
+    "district": "Bhadrak",
+    "police_station": "Town",
+    "fir_date": "2025-10-21",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Closed. Suspect caught by locals. Stolen items recovered."
+  },
+  {
+    "case_id": "JJP1175",
+    "district": "Jajpur",
+    "police_station": "Town",
+    "fir_date": "2all-10-22",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Cash snatched from bank customer. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "BLS1176",
+    "district": "Balasore",
+    "police_station": "Marine",
+    "fir_date": "2025-10-23",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-TBehera",
+    "case_diary_summary": "Status: Pending. Theft of fishing nets. Witness statement recorded."
+  },
+  {
+    "case_id": "MYJ1177",
+    "district": "Mayurbhanj",
+    "police_station": "Udala",
+    "fir_date": "2025-10-24",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SKMarndi",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "KJR1178",
+    "district": "Keonjhar",
+    "police_station": "Joda",
+    "fir_date": "2025-10-25",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-BNayak",
+    "case_diary_summary": "Status: Pending. Theft of iron ore. Truck details collected. Checking transport permits."
+  },
+  {
+    "case_id": "BHD1179",
+    "district": "Bhadrak",
+    "police_station": "Rural",
+    "fir_date": "2025-10-26",
+    "crime_type": "Accident (Section 304A IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RBarik",
+    "case_diary_summary": "Status: Pending. Hit and run. Awaiting post-mortem report. No witnesses."
+  },
+  {
+    "case_id": "JJP1180",
+    "district": "Jajpur",
+    "police_station": "Kalinga Nagar",
+    "fir_date": "2025-10-27",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKJena",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report on fingerprints."
+  },
+  {
+    "case_id": "KHD1181",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-10-28",
+    "crime_type": "Cybercrime (Section 66 IT Act)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. SIM card swap fraud. Awaiting ISP response for call records."
+  },
+  {
+    "case_id": "CUT1182",
+    "district": "Cuttack",
+    "police_station": "Badambadi",
+    "fir_date": "2025-10-29",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Mobile theft. Suspect tracked using IMEI and arrested."
+  },
+  {
+    "case_id": "GNJ1183",
+    "district": "Ganjam",
+    "police_station": "Berhampur Town",
+    "fir_date": "2025-10-28",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Pending. Modus operandi matches previous cases. Awaiting forensic report."
+  },
+  {
+    "case_id": "SNG1184",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 19",
+    "fir_date": "2025-10-27",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "PURI1185",
+    "district": "Puri",
+    "police_station": "Town",
+    "fir_date": "2025-10-29",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Land sale with forged documents. Awaiting forensic report on signatures."
+  },
+  {
+    "case_id": "KHD1186",
+    "district": "Khordha",
+    "police_station": "Khandagiri",
+    "fir_date": "2025-10-30",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "SBP1187",
+    "district": "Sambalpur",
+    "police_station": "Ainthapali",
+    "fir_date": "2025-10-28",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Witness statement recorded. Awaiting forensic report."
+  },
+  {
+    "case_id": "CUT1188",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-10-30",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. Accused identified from CCTV and arrested. Charge sheet filed."
+  },
+  {
+    "case_id": "GNJ1189",
+    "district": "Ganjam",
+    "police_station": "Gopalpur",
+    "fir_date": "2025-10-29",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Compromise reached."
+  },
+  {
+    "case_id": "KHD1190",
+    "district": "Khordha",
+    "police_station": "Infocity",
+    "fir_date": "2025-10-31",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Theft in company campus. CCTV footage sent for enhancement. Internal security being questioned."
+  },
+  {
+    "case_id": "SNG1191",
+    "district": "Sundargarh",
+    "police_station": "Plant Site",
+    "fir_date": "2025-10-30",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  },
+  {
+    "case_id": "PURI1192",
+    "district": "Puri",
+    "police_station": "Sea Beach",
+    "fir_date": "2025-10-31",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-PKumar",
+    "case_diary_summary": "Status: Pending. Mobile stolen from tourist. IMEI number tracked. Location pending from service provider. Awaiting ISP response."
+  },
+  {
+    "case_id": "KPT1193",
+    "district": "Koraput",
+    "police_station": "Sunabeda",
+    "fir_date": "2025-10-27",
+    "crime_type": "Cheating (Section 420 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-RSwain",
+    "case_diary_summary": "Status: Closed. Accused returned money. Case closed on compromise."
+  },
+  {
+    "case_id": "CUT1194",
+    "district": "Cuttack",
+    "police_station": "Markatnagar",
+    "fir_date": "2025-11-01",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Pending. Victim statement recorded. Accused absconding."
+  },
+  {
+    "case_id": "KHD1195",
+    "district": "Khordha",
+    "police_station": "Chandrasekharpur",
+    "fir_date": "2025-11-02",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-JPatel",
+    "case_diary_summary": "Status: Pending. Awaiting forensic report. No CCTV."
+  },
+  {
+    "case_id": "GNJ1196",
+    "district": "Ganjam",
+    "police_station": "BaidaNathPur",
+    "fir_date": "2025-11-01",
+    "crime_type": "Robbery (Section 392 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-SMishra",
+    "case_diary_summary": "Status: Closed. Suspects arrested during night patrol. Stolen items recovered."
+  },
+  {
+    "case_id": "SBP1197",
+    "district": "Sambalpur",
+    "police_station": "Town",
+    "fir_date": "2025-10-30",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-MBehera",
+    "case_diary_summary": "Status: Pending. Theft from temple donation box. CCTV footage sent for enhancement."
+  },
+  {
+    "case_id": "SNG1198",
+    "district": "Sundargarh",
+    "police_station": "Rourkela Sector 7",
+    "fir_date": "2025-10-29",
+    "crime_type": "Assault (Section 323 IPC)",
+    "status": "Case Closed - Solved",
+    "investigating_officer_id": "SI-LMurmu",
+    "case_diary_summary": "Status: Closed. Compromise."
+  },
+  {
+    "case_id": "KHD1199",
+    "district": "Khordha",
+    "police_station": "Saheed Nagar",
+    "fir_date": "2025-11-03",
+    "crime_type": "Theft (Section 379 IPC)",
+    "status": "Pending Investigation",
+    "investigating_officer_id": "SI-RDas",
+    "case_diary_summary": "Status: Pending. Bag lift from market. CCTV footage being reviewed."
+  },
+  {
+    "case_id": "CUT1200",
+    "district": "Cuttack",
+    "police_station": "Chauliaganj",
+    "fir_date": "2025-11-02",
+    "crime_type": "Burglary (Section 457 IPC)",
+    "status": "Case Closed - Unsolved",
+    "investigating_officer_id": "SI-AMohanty",
+    "case_diary_summary": "Status: Closed. No leads. Case closed as undetected."
+  }
+]
